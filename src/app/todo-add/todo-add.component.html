@@ -1,0 +1,35 @@
+<!-- 
+    [formGroup] is used to specify, which form is used for this context
+    formControlName: is used to specify the control name of the [formGroup]
+ -->
+<div [formGroup]="form" class="d-flex">
+
+    <div>
+    <input formControlName="taskName" class="form-control"/>
+        <!-- Display Error 
+            access the control
+            form.controls.get('taskName')
+
+            check if this control contains any error or not
+        -->
+        <div *ngIf="taskControl.errors">
+            <!-- Required filed -->
+            <span *ngIf="taskControl.hasError('required') && taskControl.dirty"  class="required">
+                <!-- {{'todo.taskName'|translate}} is required. -->
+
+                {{'todo.taskRequired'|translate}}
+            </span>
+            <!-- Max length -->
+            <span *ngIf="taskControl.hasError('maxlength')" class="required">
+                {{'todo.taskName'|translate}} is not more than 5 chars.
+            </span>
+        </div>
+    </div>
+    <!-- <input [(ngModel)]="taskName"/> -->
+    
+    <div>
+    <button (click)="addTask()" class="btn btn-primary">{{'todo.add'|translate}}</button>
+    <!-- {{taskName}} -->
+
+    </div>
+</div>

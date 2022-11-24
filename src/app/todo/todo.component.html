@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6">
+      <div class="card">
+
+        <div class="card-header">
+          <h4>Todo App</h4>
+          <div>Manage your Own Task</div>
+        </div>
+
+        <div class="card-body">
+          <!-- 
+        Display the add. when editItem doesn't contains any value
+     -->
+          <app-todo-add (onAdd)="handleAdd($event)" *ngIf="!editItem"></app-todo-add>
+
+          <!-- 
+    Display the edit when ediItem has value
+   -->
+          <app-todo-edit [editItem]="editItem" (onUpdate)="handleUpdate($event)" (onCancel)="handleCancel()"
+            *ngIf="editItem"></app-todo-edit>
+          <!-- Task Name: {{taskName}} -->
+        </div>
+
+        <div>
+
+          <app-todo-list [items]="items" (onDelete)="handleDelete($event)" (onEdit)="handleEdit($event)"
+            (onComplete)="handleComplete($event)"></app-todo-list>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

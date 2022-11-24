@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+/* 
+~ for node_module path
+*/
+@import'~bootstrap/dist/css/bootstrap.min.css';
+
+body{
+    font-size: 20px ;
+}

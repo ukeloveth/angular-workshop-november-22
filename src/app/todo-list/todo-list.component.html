@@ -1,0 +1,65 @@
+<div>
+    <!-- List{{task}} -->
+    <!-- List{{items.length}} -->
+
+    <!-- <div>
+        if(loading==true)
+        {
+        Loading... 
+        }
+        else{
+            //
+        } 
+    </div>  -->
+<!-- Display no task found when, there are not items
+    *ngIf : is used to display the html based on the condition
+-->
+
+<div *ngIf="items.length==0">
+    <strong>No task Found</strong>
+</div>
+
+<!-- Display the list of items if items length is greater than zero 
+  *ngFor : is used to loop the data
+  for(let obj of items){}
+  .(dot) operator is used to access the attribute/property of an object
+  |operator:  transformation of data, change the format of the data, from one state to another state
+
+  Pipe(|) : pipe is used to change/transform the data from one format 
+  When we are using the pipe, it will not change the original data
+  https://angular.io/api/common/DatePipe 
+
+  index : predefined variable along with ngFor, which will give us the index of each iteration
+-->
+
+<div *ngIf="items.length!=0">
+    <!-- Loop through the data -->
+    <div *ngFor="let item of items;let itemIndex=index" class="item">
+        <!-- Radio Button -->
+        <div>
+            {{itemIndex}} 
+            <input type="checkbox" (click)="handleComplete(itemIndex)"/>
+            {{item.completed}}
+        </div>
+
+        <!-- For Task Info-->
+        <div>
+
+        {{item.task}}
+         <div>
+            {{item.createdOn | date:'medium'}}
+            <!-- {{item.createdOn}} -->
+        </div>
+        </div>
+
+        <!-- For Actions -->
+        <div>
+            <button (click)="handleEdit(itemIndex)">Edit</button>
+            <button (click)="handleDelete(itemIndex)">Delete</button>
+        </div>
+
+    <div>
+
+    
+</div>
+</div>

@@ -1,0 +1,7 @@
+{
+    "todo":{
+        "add":"Add",
+        "taskName":"Task Name",
+        "taskRequired":"Task name is required"
+    }
+}
