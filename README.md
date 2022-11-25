@@ -94,3 +94,12 @@ https://github.com/ngx-translate/core
 Use this fake api to try out calling an end point : https://jsonplaceholder.typicode.com/
 
 Use this to download GIT on your local machine :https://git-scm.com/download/mac
+
+ng build --configuration production : do the production build
+When you clone or download angualar project
+project folder :> npm install
+install all the node_modules inside the project
+
+https://pages.github.com/: it used to build static pages
+
+angular app heroku
