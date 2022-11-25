@@ -103,3 +103,5 @@ install all the node_modules inside the project
 https://pages.github.com/: it used to build static pages
 
 angular app heroku
+
+node server.js
